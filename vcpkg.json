@@ -1,0 +1,28 @@
+{
+  "name": "breakpad-example",
+  "version": "1.0.0",
+  "dependencies": [
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    },
+    "breakpad"
+  ],
+  "builtin-baseline": "2ac6ba173be85207a7bac4f0f02f5486f9fd4c0f",
+  "vcpkg-configuration": {
+    "registries": [
+      {
+        "kind": "filesystem",
+        "baseline": "2024-06-19",
+        "path": "./vcpkg_registry",
+        "packages": [
+          "breakpad"
+        ]
+      }
+    ]
+  }
+}

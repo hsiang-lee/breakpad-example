@@ -1,0 +1,68 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 20,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "Debug",
+      "displayName": "Debug Config",
+      "description": "Debug build using Ninja generator",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build_Debug/",
+      "installDir": "${sourceDir}/build_Debug/install/",
+      "toolchainFile": "/root/vcpkg/scripts/buildsystems/vcpkg.cmake",
+      "cacheVariables": {
+        "VCPKG_INSTALLED_DIR": "/root/vcpkg_installed/breakpad_example/",
+        "VCPKG_HOST_TRIPLET": "x64-linux",
+        "VCPKG_TARGET_TRIPLET": "x64-linux",
+        "CMAKE_MAKE_PROGRAM": "/root/vcpkg/downloads/tools/ninja/1.10.2-linux/ninja",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_BUILD_TYPE": {
+          "type": "STRING",
+          "value": "Debug"
+        },
+        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_CXX_COMPILER": "g++"
+      },
+      "environment": {
+      },
+      "vendor": {
+      }
+    },
+    {
+      "name": "Release",
+      "displayName": "Release Config",
+      "description": "Release build using Ninja generator",
+      "inherits": "Debug",
+      "binaryDir": "${sourceDir}/build_Release/",
+      "installDir": "${sourceDir}/build_Release/install/",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": {
+          "type": "STRING",
+          "value": "Release"
+        }
+      },
+      "environment": {
+      },
+      "vendor": {
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "Debug",
+      "configurePreset": "Debug"
+    },
+    {
+      "name": "Release",
+      "configurePreset": "Release"
+    }
+  ],
+  "vendor": {
+  }
+}
+
+
